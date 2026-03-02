@@ -44,9 +44,6 @@ class QuoteRequestDataImportPluginTest extends Unit
      */
     protected $tester;
 
-    /**
-     * @return void
-     */
     protected function setUp(): void
     {
         parent::setUp();
@@ -54,9 +51,6 @@ class QuoteRequestDataImportPluginTest extends Unit
         $this->tester->ensureQuoteRequestTablesIsEmpty();
     }
 
-    /**
-     * @return void
-     */
     public function testImportImportsData(): void
     {
         // Arrange
@@ -77,9 +71,6 @@ class QuoteRequestDataImportPluginTest extends Unit
         $this->tester->assertQuoteRequestDatabaseTablesContainsData();
     }
 
-    /**
-     * @return void
-     */
     public function testImportThrowsExceptionWhenCompanyUserNotFound(): void
     {
         // Arrange
@@ -99,9 +90,6 @@ class QuoteRequestDataImportPluginTest extends Unit
         $quoteRequestDataImportPlugin->import($dataImportConfigurationTransfer);
     }
 
-    /**
-     * @return void
-     */
     public function testGetImportTypeReturnsTypeOfImporter(): void
     {
         // Act

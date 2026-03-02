@@ -22,9 +22,6 @@ use Spryker\Zed\QuoteRequestDataImport\Business\QuoteRequestDataImportStep\Quote
  */
 class QuoteRequestDataImportBusinessFactory extends DataImportBusinessFactory
 {
-    /**
-     * @return \Spryker\Zed\DataImport\Business\Model\DataImporterInterface
-     */
     public function getQuoteRequestDataImporter(): DataImporterInterface
     {
         $dataImporter = $this->getCsvDataImporterFromConfig($this->getConfig()->getQuoteRequestDataImporterConfiguration());
@@ -39,9 +36,6 @@ class QuoteRequestDataImportBusinessFactory extends DataImportBusinessFactory
         return $dataImporter;
     }
 
-    /**
-     * @return \Spryker\Zed\DataImport\Business\Model\DataImporterInterface
-     */
     public function getQuoteRequestVersionDataImporter(): DataImporterInterface
     {
         $dataImporter = $this->getCsvDataImporterFromConfig($this->getConfig()->getQuoteRequestVersionDataImporterConfiguration());
@@ -56,33 +50,21 @@ class QuoteRequestDataImportBusinessFactory extends DataImportBusinessFactory
         return $dataImporter;
     }
 
-    /**
-     * @return \Spryker\Zed\DataImport\Business\Model\DataImportStep\DataImportStepInterface
-     */
     public function createQuoteRequestWriterStep(): DataImportStepInterface
     {
         return new QuoteRequestWriterStep();
     }
 
-    /**
-     * @return \Spryker\Zed\DataImport\Business\Model\DataImportStep\DataImportStepInterface
-     */
     public function createQuoteRequestVersionWriterStep(): DataImportStepInterface
     {
         return new QuoteRequestVersionWriterStep();
     }
 
-    /**
-     * @return \Spryker\Zed\DataImport\Business\Model\DataImportStep\DataImportStepInterface
-     */
     public function createQuoteRequestReferenceToIdQuoteRequestStep(): DataImportStepInterface
     {
         return new QuoteRequestReferenceToIdQuoteRequest();
     }
 
-    /**
-     * @return \Spryker\Zed\DataImport\Business\Model\DataImportStep\DataImportStepInterface
-     */
     public function createCompanyUserKeyToIdCompanyUserStep(): DataImportStepInterface
     {
         return new CompanyUserKeyToIdCompanyUser();

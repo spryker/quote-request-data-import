@@ -48,9 +48,6 @@ class QuoteRequestReferenceToIdQuoteRequest implements DataImportStepInterface
         $dataSet[QuoteRequestVersionDataSetInterface::ID_QUOTE_REQUEST] = $this->idQuoteRequestCache[$quoteRequestReference];
     }
 
-    /**
-     * @return \Orm\Zed\QuoteRequest\Persistence\SpyQuoteRequestQuery
-     */
     protected function createQuoteRequestQuery(): SpyQuoteRequestQuery
     {
         return SpyQuoteRequestQuery::create();

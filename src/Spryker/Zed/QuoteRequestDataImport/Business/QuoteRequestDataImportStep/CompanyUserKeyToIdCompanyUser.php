@@ -48,9 +48,6 @@ class CompanyUserKeyToIdCompanyUser implements DataImportStepInterface
         $dataSet[QuoteRequestDataSetInterface::ID_COMPANY_USER] = $this->idCompanyUserCache[$companyUserKey];
     }
 
-    /**
-     * @return \Orm\Zed\CompanyUser\Persistence\SpyCompanyUserQuery
-     */
     protected function createCompanyUserQuery(): SpyCompanyUserQuery
     {
         return SpyCompanyUserQuery::create();

@@ -14,11 +14,6 @@ use Spryker\Zed\QuoteRequestDataImport\Business\DataSet\QuoteRequestDataSetInter
 
 class QuoteRequestWriterStep implements DataImportStepInterface
 {
-    /**
-     * @param \Spryker\Zed\DataImport\Business\Model\DataSet\DataSetInterface $dataSet
-     *
-     * @return void
-     */
     public function execute(DataSetInterface $dataSet): void
     {
         $quoteRequestEntity = $this->createQuoteRequestQuery()
@@ -32,9 +27,6 @@ class QuoteRequestWriterStep implements DataImportStepInterface
             ->save();
     }
 
-    /**
-     * @return \Orm\Zed\QuoteRequest\Persistence\SpyQuoteRequestQuery
-     */
     protected function createQuoteRequestQuery(): SpyQuoteRequestQuery
     {
         return SpyQuoteRequestQuery::create();

@@ -49,9 +49,6 @@ class QuoteRequestVersionDataImportPluginTest extends Unit
      */
     protected $tester;
 
-    /**
-     * @return void
-     */
     protected function setUp(): void
     {
         parent::setUp();
@@ -59,9 +56,6 @@ class QuoteRequestVersionDataImportPluginTest extends Unit
         $this->tester->ensureQuoteRequestTablesIsEmpty();
     }
 
-    /**
-     * @return void
-     */
     public function testImportImportsData(): void
     {
         $this->markTestSkipped('Test is not valid. Demodata includes not existing quote request that generates reference field dynamically');
@@ -96,9 +90,6 @@ class QuoteRequestVersionDataImportPluginTest extends Unit
         $this->tester->assertQuoteRequestVersionDatabaseTablesContainsData();
     }
 
-    /**
-     * @return void
-     */
     public function testImportThrowsExceptionWhenQuoteRequestNotFoundByReference(): void
     {
         // Arrange
@@ -119,9 +110,6 @@ class QuoteRequestVersionDataImportPluginTest extends Unit
         $quoteRequestVersionDataImportPlugin->import($dataImportConfigurationTransfer);
     }
 
-    /**
-     * @return void
-     */
     public function testGetImportTypeReturnsTypeOfImporter(): void
     {
         // Act

@@ -13,9 +13,6 @@ use Orm\Zed\QuoteRequest\Persistence\SpyQuoteRequestVersionQuery;
 
 class QuoteRequestDataImportHelper extends Module
 {
-    /**
-     * @return void
-     */
     public function assertQuoteRequestDatabaseTablesContainsData(): void
     {
         $quoteRequestQuery = $this->getQuoteRequestQuery();
@@ -26,9 +23,6 @@ class QuoteRequestDataImportHelper extends Module
         );
     }
 
-    /**
-     * @return void
-     */
     public function assertQuoteRequestVersionDatabaseTablesContainsData(): void
     {
         $quoteRequestItemQuery = $this->getQuoteRequestVersionQuery();
@@ -39,17 +33,11 @@ class QuoteRequestDataImportHelper extends Module
         );
     }
 
-    /**
-     * @return \Orm\Zed\QuoteRequest\Persistence\SpyQuoteRequestQuery
-     */
     protected function getQuoteRequestQuery(): SpyQuoteRequestQuery
     {
         return SpyQuoteRequestQuery::create();
     }
 
-    /**
-     * @return \Orm\Zed\QuoteRequest\Persistence\SpyQuoteRequestVersionQuery
-     */
     protected function getQuoteRequestVersionQuery(): SpyQuoteRequestVersionQuery
     {
         return SpyQuoteRequestVersionQuery::create();

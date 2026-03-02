@@ -36,20 +36,12 @@ class QuoteRequestDataImportCommunicationTester extends Actor
 {
     use _generated\QuoteRequestDataImportCommunicationTesterActions;
 
-    /**
-     * @return void
-     */
     public function ensureQuoteRequestTablesIsEmpty(): void
     {
         $this->ensureDatabaseTableIsEmpty($this->getQuoteRequestQuery());
         $this->ensureDatabaseTableIsEmpty($this->getQuoteRequestVersionQuery());
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\QuoteTransfer $quoteTransfer
-     *
-     * @return \Generated\Shared\Transfer\QuoteRequestVersionTransfer
-     */
     public function createQuoteRequestVersion(QuoteTransfer $quoteTransfer): QuoteRequestVersionTransfer
     {
         return $this->haveQuoteRequestVersion([
@@ -57,12 +49,6 @@ class QuoteRequestDataImportCommunicationTester extends Actor
         ]);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\CustomerTransfer $customerTransfer
-     * @param string|null $key
-     *
-     * @return \Generated\Shared\Transfer\CompanyUserTransfer
-     */
     public function createCompanyUser(CustomerTransfer $customerTransfer, ?string $key = null): CompanyUserTransfer
     {
         $companyTransfer = $this->createCompany();
@@ -79,9 +65,6 @@ class QuoteRequestDataImportCommunicationTester extends Actor
         );
     }
 
-    /**
-     * @return \Generated\Shared\Transfer\CompanyTransfer
-     */
     protected function createCompany(): CompanyTransfer
     {
         return $this->haveCompany(
@@ -92,11 +75,6 @@ class QuoteRequestDataImportCommunicationTester extends Actor
         );
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\CompanyTransfer $companyTransfer
-     *
-     * @return \Generated\Shared\Transfer\CompanyBusinessUnitTransfer
-     */
     protected function createCompanyBusinessUnit(CompanyTransfer $companyTransfer): CompanyBusinessUnitTransfer
     {
         return $this->haveCompanyBusinessUnit([
@@ -104,17 +82,11 @@ class QuoteRequestDataImportCommunicationTester extends Actor
         ]);
     }
 
-    /**
-     * @return \Orm\Zed\QuoteRequest\Persistence\SpyQuoteRequestQuery
-     */
     protected function getQuoteRequestQuery(): SpyQuoteRequestQuery
     {
         return SpyQuoteRequestQuery::create();
     }
 
-    /**
-     * @return \Orm\Zed\QuoteRequest\Persistence\SpyQuoteRequestVersionQuery
-     */
     protected function getQuoteRequestVersionQuery(): SpyQuoteRequestVersionQuery
     {
         return SpyQuoteRequestVersionQuery::create();
