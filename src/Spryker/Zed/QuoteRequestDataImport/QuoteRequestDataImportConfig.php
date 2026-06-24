@@ -13,11 +13,15 @@ use Spryker\Zed\DataImport\DataImportConfig;
 class QuoteRequestDataImportConfig extends DataImportConfig
 {
     /**
+     * @api
+     *
      * @var string
      */
     public const IMPORT_TYPE_QUOTE_REQUEST = 'quote-request';
 
     /**
+     * @api
+     *
      * @var string
      */
     public const IMPORT_TYPE_QUOTE_REQUEST_VERSION = 'quote-request-version';
